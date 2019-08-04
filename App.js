@@ -2,15 +2,6 @@ import React, {Fragment} from 'react';
 import {SafeAreaView, Image, StyleSheet, ScrollView, View, Text, StatusBar,} from 'react-native';
 import {Header, Colors, } from 'react-native/Libraries/NewAppScreen';
 
-// const HeaderMy = () => (
-//   <ImageBackground
-//     accessibilityRole={'image'}
-//     source={require('./logo.png')}
-//     style={styles.background}
-//     imageStyle={styles.logo}>
-//     <Text style={styles.tFext}>Siema tu Ania</Text>
-//   </ImageBackground>
-// );
 
 const App = () => {
   return (
@@ -24,7 +15,7 @@ const App = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>  Czesc jestem Ania</Text>
               <Text style={styles.sectionDescription}>
-                A to jest moja apka
+                A to jest moja apka, i juz mi nawet dziala Git
               </Text>
             </View>
 
