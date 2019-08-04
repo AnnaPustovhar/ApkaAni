@@ -5,72 +5,36 @@ import {Header, Colors, } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
-    <Fragment>
+    <View style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+   
         <ScrollView contentInsetAdjustmentBehavior="automatic"  style={styles.scrollView}>
-    <Image style={styles.imgAnia} source={require('./src/Ania.jpg')} />
+          <Image style={styles.imgAnia} source={require('./src/Ania.jpg')} />
+ 
+          <Text>Hi My name is Ania</Text>
 
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>  Czesc jestem Ania</Text>
-              <Text style={styles.sectionDescription}>
-                A to jest moja apka, i juz mi nawet dziala Git
-              </Text>
-            </View>
-
-
-          </View>
         </ScrollView>
-      </SafeAreaView>
-    </Fragment>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container:{
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  },
   scrollView: {
-    backgroundColor:'#cccc',
+    flexGrow : 1, 
+    width: '100%',
+    height:'100%',
+    
   },
   imgAnia:{
     width: 100,
     height:100,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor:'#ccc',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-    backgroundColor:'red',
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-    backgroundColor:'pink',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-    
-  },
+
 });
 
 export default App;
