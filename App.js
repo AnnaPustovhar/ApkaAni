@@ -1,47 +1,36 @@
-import React from 'react';
-import {Image, ImageBackground, StyleSheet, ScrollView, View, Text, StatusBar,} from 'react-native';
+import React, {Component} from 'react';
+import {AppRegistry, Text, View, StyleSheet, Switch} from 'react-native';
 
+export default class ApkaAni extends Component <{}> {
 
-const App = () => {
-  
-  return (
-    <ImageBackground  source={require('./src/coffee.jpg')} style={styles.container}>
-      <StatusBar barStyle="dark-content" /> 
-   
-        <ScrollView  contentInsetAdjustmentBehavior="automatic"  style={styles.scrollView}> 
-          
-          <View style={styles.scrollwidth}>
-            
-            <Image style={styles.imgAnia} source={require('./src/Ania.jpg')} />
+    constructor(props){
+        super(props)
+        this.state = {
+            switchValue : false
+        }
+    }
 
-            
-            <Text>Hi My name is Ania P</Text>
+switchChange(switchValue) {
+    this.setState({
+        switchValue
+    })
+}
 
-          </View>
-      </ScrollView>
-    </ImageBackground>
-  );
-};
-
+ render(){
+        return(
+            <View style={styles.container}>
+                <Switch value={this.state.switchValue} onValueChange={(value) =>{
+                    this.switchChange(value)
+                }}/> 
+            </View>
+        );
+    }
+}
 const styles = StyleSheet.create({
-  container:{
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  scrollwidth:{
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  scrollView: { 
-    width: '100%',
-    height:'100%',
-  },
-  imgAnia:{
-    width: 200,
-    height:200,
-  },
-
-});
-
-export default App;
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
+  });
+AppRegistry.registerComponent('ApkaAni', () => ApkaAni);
