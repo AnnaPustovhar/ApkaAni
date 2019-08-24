@@ -1,36 +1,50 @@
-import React, {Component} from 'react';
-import {AppRegistry, Text, View, StyleSheet, Switch} from 'react-native';
 
-export default class ApkaAni extends Component <{}> {
+import React from "react";
+import { View, Text, StyleSheet, Button } from "react-native";
+import { createStackNavigator, createAppContainer} from "react-navigation";
 
-    constructor(props){
-        super(props)
-        this.state = {
-            switchValue : false
-        }
-    }
-
-switchChange(switchValue) {
-    this.setState({
-        switchValue
-    })
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Home Screen</Text>
+        <Button
+          title="go to first page"
+           onPress={()=>this.props.navigation.navigate('About')}         
+        />
+         </View>
+    );
+  }
 }
 
- render(){
-        return(
-            <View style={styles.container}>
-                <Switch value={this.state.switchValue} onValueChange={(value) =>{
-                    this.switchChange(value)
-                }}/> 
-            </View>
-        );
+class AboutScreen extends React.Component {
+    render() {
+      return (
+        <View style={styles.container}>
+          <Text>first page</Text>
+        </View>
+      );
     }
-}
-const styles = StyleSheet.create({
+  }
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+
+  About:{
+      screen: AboutScreen
+  }
+
+});
+
+export default createAppContainer(AppNavigator);
+
+const styles = StyleSheet.create ({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }
-  });
-AppRegistry.registerComponent('ApkaAni', () => ApkaAni);
+        flex:1,
+        backgroundColor: "#fff",
+        justifyContent:"center",
+        alignItems:"center"
+    },
+})
