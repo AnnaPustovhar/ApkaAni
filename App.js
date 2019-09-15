@@ -32,9 +32,6 @@ const AppNavigator = createStackNavigator({
     screen: HomeScreen
   },
 
-  About:{
-      screen: AboutScreen
-  }
 
 });
 
