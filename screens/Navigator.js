@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Settings from './Settings';
 import HomeScreen from './Home';
 import Catalog from './Catalog';
-
-
 
 const AppNavigator = createStackNavigator({
   
@@ -19,11 +17,13 @@ const AppNavigator = createStackNavigator({
 
   CatalogScreen : {
     screen : Catalog
-  }
+  },
 
  
 
   });
+
+
 
   const Nav = createAppContainer(AppNavigator);
   export default Nav;

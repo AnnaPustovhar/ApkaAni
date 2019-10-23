@@ -31,6 +31,15 @@ allprojects {
             // Android JSC is installed from npm
             url("$rootDir/../node_modules/jsc-android/dist")
         }
+        maven {
+        url 'https://maven.google.com'
+        } // added manualy for image picker
+
+        maven 
+        {
+            url "https://www.jitpack.io"
+        } //added manualy for image picker
+
 
         google()
         jcenter()
