@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
-import Settings from './Settings';
+import Camera from './Camera';
 import HomeScreen from './Home';
-import Catalog from './Catalog';
+import ActionButton from './ActionButton';
 
 const AppNavigator = createStackNavigator({
   
-  Home: { 
-      screen: HomeScreen,
+    Home: { 
+        screen: HomeScreen,
+    },
+   CameraScreen: { 
+      screen: Camera,
+      headerBackTitleVisible: false   // - ?
   },
 
-  SettingScreen: { 
-      screen: Settings,
-      headerBackTitleVisible: false
+  ActionButton: {
+      screen : ActionButton,
+      
   },
 
-  CatalogScreen : {
-    screen : Catalog
-  },
-
+  
  
 
   });

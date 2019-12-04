@@ -35,6 +35,7 @@ target 'ApkaAni' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
+
   target 'ApkaAniTests' do
     inherit! :search_paths
     # Pods for testing
