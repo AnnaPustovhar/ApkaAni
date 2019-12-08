@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
-export default class App extends React.Component{
+export default class NavButton extends React.Component{
   animation = new Animated.Value (0);
   toggleMenu = () => {
     const toValue = this.open ? 0 : 1;
@@ -72,7 +72,7 @@ export default class App extends React.Component{
 
     }
     return (
-          <View style={[styles.container, this.props.style]}>
+          <View style={[this.props.style]}>
              
 
               <TouchableWithoutFeedback>
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 200,
     position: 'absolute',
-    bottom: 20,
-    right: 20,
+    bottom: 10,
+    right: 10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor:'white',

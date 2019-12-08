@@ -11,7 +11,7 @@ const AppNavigator = createStackNavigator({
     },
    CameraScreen: { 
       screen: Camera,
-      headerBackTitleVisible: false   // - ?
+      headerBackTitleVisible: true ,  // - ?
   },
 
   ActionButton: {
