@@ -2,30 +2,25 @@ import React from 'react';
 import { View, Text, ActivityIndicator} from 'react-native';
 
 class SplashScreen extends React.Component {
-  performTimeConsumingTask = async() => {
-    return new Promise((resolve) =>
-      setTimeout(
-        () => { resolve('result') },
-        3000
-      )
-    )
-  }
 
-  async componentDidMount() {
-    // Preload data from an external API
-    // Preload data using AsyncStorage
-    const data = await this.performTimeConsumingTask();
 
-    if (data !== null) {
-      this.props.navigation.navigate('App');
-    }
+  static navigationOptions = {
+    header: null 
   }
+     
+  componentWillMount(){
+  setTimeout(
+        () => {
+           this.props.navigation.navigate('Home')
+           }, 1000)
+        
+          }
 
   render() {
     return (
       <View style={styles.viewStyles}>
         <Text style={styles.textStyles}>
-         Welcome to my App
+        YourBestJob app
         </Text>
         <ActivityIndicator color={'white'}/> 
       </View>
